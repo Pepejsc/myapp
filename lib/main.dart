@@ -9,11 +9,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:319759868.
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hola Mundo'),
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'BungeeTint'),
+      home: const Scaffold(
+        body: Stack(
+          alignment: Alignment.center,
+          fit: StackFit.expand,
+          children: [
+            Image(
+              image: NetworkImage(
+                'https://i.pinimg.com/originals/b9/df/8e/b9df8ec82840475208a8c37c1d790d54.jpg',
+              ),
+              //image: AssetImage('assets/images/fontImage.jpg'), //assetsImage
+              fit: BoxFit.cover,
+            ),
+            Positioned(
+              top: 400,
+              child: Text(
+                'Hola Amigo!',
+                style: TextStyle(
+                  fontSize: 48,
+                  letterSpacing: 1,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
